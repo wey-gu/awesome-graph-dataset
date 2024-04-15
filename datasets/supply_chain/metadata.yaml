@@ -8,4 +8,12 @@ homepage: https://github.com/wey-gu/supplychain-dataset-gen
 video: https://github.com/wey-gu/supplychain-dataset-gen/assets/1651790/efb9d71a-4ed6-4272-a976-d4f922cf829a
 iframe: https://www.siwei.io/demo-dumps/adhoc-graphs/nebulagraph_export_supply_chain.html
 screen_capture: https://github.com/wey-gu/supplychain-dataset-gen/assets/1651790/73d88e8f-ad20-4657-8323-97ec38f4b667
+gephi_lite_file: ""
 license: Apache-2.0
+tags:
+  - supply chain
+  - automotive
+  - manufacturing
+authors:
+  - name: Wey Gu
+    email: weyl.gu@gmail.com
