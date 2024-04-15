@@ -9,6 +9,54 @@ video: https://github.com/wey-gu/supplychain-dataset-gen/assets/1651790/efb9d71a
 iframe: https://www.siwei.io/demo-dumps/adhoc-graphs/nebulagraph_export_supply_chain.html
 screen_capture: https://github.com/wey-gu/supplychain-dataset-gen/assets/1651790/73d88e8f-ad20-4657-8323-97ec38f4b667
 gephi_lite_file: ""
+structure_mermaid: |
+  graph TD
+    A[car_model]
+    B[feature]
+    C[part]
+    D[supplier]
+
+    A -->|with_feature| B
+    B -->|is_composed_of| C
+    C -->|is_supplied_by| D
+
+    style A fill:#f9d,stroke:#333,stroke-width:2px;
+    style B fill:#fcc,stroke:#333,stroke-width:2px;
+    style C fill:#cfc,stroke:#333,stroke-width:2px;
+    style D fill:#ccf,stroke:#333,stroke-width:2px;
+properties_mermaid: |
+  classDiagram
+    class car_model {
+        string name
+        string number
+        int year
+        string type
+        string engine_type
+        string size
+        int seats
+    }
+    class feature {
+        string name
+        string number
+        string type
+        string state
+    }
+    class part {
+        string name
+        string number
+        double price
+        string date
+    }
+    class supplier {
+        string name
+        string address
+        string contact
+        string phone_number
+    }
+
+    car_model --> feature : with_feature
+    feature --> part : is_composed_of
+    part --> supplier : is_supplied_by
 license: Apache-2.0
 tags:
   - supply chain
@@ -17,3 +65,4 @@ tags:
 authors:
   - name: Wey Gu
     email: weyl.gu@gmail.com
+
