@@ -1,0 +1,2 @@
+*.csv filter=lfs diff=lfs merge=lfs -text
+*.data.ngql filter=lfs diff=lfs merge=lfs -text
