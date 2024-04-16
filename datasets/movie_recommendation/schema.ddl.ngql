@@ -1,0 +1,9 @@
+CREATE TAG person(name string, birthdate string);
+CREATE TAG movie(name string);
+CREATE TAG genre(name string);
+CREATE TAG `user`(user_id string);
+
+CREATE EDGE acted_by();
+CREATE EDGE directed_by();
+CREATE EDGE with_genre();
+CREATE EDGE watched(rate float);
