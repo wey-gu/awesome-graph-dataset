@@ -171,7 +171,9 @@ dataset_showcase_template_j2 = """
 **Tags:** {% for tag in dataset["tags"] %}`{{ tag }}`{% if not loop.last %}, {% endif %}{% endfor %}
 {% endif %}
 
-> {{ dataset["description"] }}
+
+> {{ dataset["description"] }} [Download :fontawesome-solid-download:](#download){ .md-button }
+
 
 ## Data Showcase
 
