@@ -71,6 +71,9 @@ tags:
 author:
   name: Wey Gu
   email: weyl.gu@gmail.com
+contributor:
+  name: Wey Gu
+  email: weyl.gu@gmail.com
 jupyter_nebulagraph_load_lines: |
   %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/supply_chain/tiny/nodes_car_model.csv --tag car_model --vid 0 --props 1:name,2:number,3:year,4:type,5:engine_type,6:size,7:seats --space supply_chain
   %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/supply_chain/tiny/nodes_feature.csv --tag feature --vid 0 --props 1:name,2:number,3:type,4:state --space supply_chain
