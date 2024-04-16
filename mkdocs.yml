@@ -11,7 +11,7 @@ plugins:
 
 nav:
   - Home:
-    - 'Welcome': 'index.md'
+    - 'Welcome to Graph Dataset Hub': 'index.md'
     - 'Dataset Index': 'datasets/index.md'
     - 'Contribute': 'CONTRIBUTING.md'
   - Datasets:

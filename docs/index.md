@@ -1,6 +1,4 @@
-<a href="https://graph-hub.siwei.io"><img src="https://github.com/wey-gu/awesome-graph-dataset/assets/1651790/2f7f5c79-ff36-4fb7-9a41-bd36932f7a32" alt="Awesome Graph Dataset Banner" width="20%"></a>
-
-## Welcome to Awesome Graph Dataset
+<a href="https://graph-hub.siwei.io"><img src="https://github.com/wey-gu/awesome-graph-dataset/assets/1651790/2f7f5c79-ff36-4fb7-9a41-bd36932f7a32" alt="Awesome Graph Dataset Banner" width="60%"></a>
 
 [Graph Hub](https://graph-hub.siwei.io) serves as a vibrant community and platform, offering a curated collection of graph datasets specifically designed for NebulaGraph.
 
