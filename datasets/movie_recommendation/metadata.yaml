@@ -64,10 +64,10 @@ contributor:
 jupyter_nebulagraph_load_lines: |
   %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/people.csv --tag person --vid 0 --props 1:name,2:birthdate --space movie_recommendation
   %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/movies.csv --tag movie --vid 0 --props 1:name --space movie_recommendation
-  %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/geners.csv --tag genre --vid 0 --props 1:name --space movie_recommendation
-  %ng_load --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/user_watched_movies.csv --tag user --vid 0 --space movie_recommendation
+  %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/genres.csv --tag genre --vid 0 --props 1:name --space movie_recommendation
+  %ng_load --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/user_watched_movies.csv --tag user --vid 0 --props 0:user_id --space movie_recommendation
 
-  %ng_load --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/user_watched_movies.csv --edge watched --src 0 --dst 3 --props 1:rating --space movie_recommendation
+  %ng_load --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/user_watched_movies.csv --edge watched --src 0 --dst 3 --props 1:rate --space movie_recommendation
   %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/with_genre.csv --edge with_genre --src 0 --dst 1 --space movie_recommendation
   %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/directed_by.csv --edge directed_by --src 0 --dst 1 --space movie_recommendation
   %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/acted_by.csv --edge acted_by --src 0 --dst 1 --space movie_recommendation
