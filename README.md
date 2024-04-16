@@ -1,6 +1,8 @@
-## [Awesome Graph Dataset](https://graph-hub.siwei.io)
+<a href="https://graph-hub.siwei.io"><img src="https://github.com/wey-gu/awesome-graph-dataset/assets/1651790/2f7f5c79-ff36-4fb7-9a41-bd36932f7a32" alt="Awesome Graph Dataset Banner" width="20%"></a>
 
-This repository contains a list of graph datasets that are NebulaGraph Ready.
+## Awesome Graph Dataset
+
+[Graph Hub](https://graph-hub.siwei.io) is a community and site, to gether selected collection of graph datasets tailored for NebulaGraph.
 
 ## How to use
 
