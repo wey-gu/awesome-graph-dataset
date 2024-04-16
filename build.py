@@ -30,6 +30,7 @@ DATASET_FLAVORS = "profiles"
 DATASET_LICENSE = "license"
 DATASET_TAGS = "tags"
 DATASET_AUTHOR = "author"
+DATASET_HUB_CONTRIBUTOR = "contributor"
 DATASET_HOMEPAGE = "homepage"
 
 ## Asset Related Keys:
@@ -103,6 +104,7 @@ for dataset_id in dataset_ids:
         DATASET_LICENSE: metadata.get(DATASET_LICENSE),
         DATASET_TAGS: metadata.get(DATASET_TAGS),
         DATASET_AUTHOR: metadata.get(DATASET_AUTHOR),
+        DATASET_HUB_CONTRIBUTOR: metadata.get(DATASET_HUB_CONTRIBUTOR),
         DATASET_HOMEPAGE: metadata.get(DATASET_HOMEPAGE),
         DATASET_JUPYTER_LOAD_LINES: metadata.get(DATASET_JUPYTER_LOAD_LINES),
         DATASET_NEBULA_IMPORTER_CONF: metadata.get(DATASET_NEBULA_IMPORTER_CONF),
@@ -163,6 +165,7 @@ dataset_showcase_template_j2 = """
 {% if dataset["author"] %} ![Author](https://img.shields.io/badge/Author-{{ dataset["author"]["name"] | replace(" ", "%20") }}-blue) {% endif %}
 {% if dataset["license"] %} [![License](https://img.shields.io/badge/License-{{ dataset["license"] | replace(" ", "%20") | replace("-", "%20") }}-blue.svg)](https://opensource.org/licenses/{{ dataset["license"] }}) {% endif %}
 {% if dataset["homepage"] %} [![Homepage](https://img.shields.io/badge/Home-Page-blue.svg)]({{ dataset["homepage"] }}) {% endif %}
+{% if dataset["contributor"] %} ![Contributor](https://img.shields.io/badge/AddedBy-{{ dataset["contributor"]["name"] | replace(" ", "%20") }}-blue) {% endif %}
 
 {% if dataset["tags"] %}
 **Tags:** {% for tag in dataset["tags"] %}`{{ tag }}`{% if not loop.last %}, {% endif %}{% endfor %}
