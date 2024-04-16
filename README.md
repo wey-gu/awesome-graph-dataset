@@ -28,3 +28,7 @@ This repository contains a list of graph datasets that are NebulaGraph Ready.
 ### Load Data with NebulaGraph Importer
 
 TBD
+
+## Contributing
+
+Please refer to the [Contribution Guide](https://graph-dataset-hub.readthedocs.io/en/latest/CONTRIBUTING.md) for more information on how to introduce new datasets to the Graph Dataset Hub.
