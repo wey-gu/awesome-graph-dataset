@@ -17,6 +17,7 @@ nav:
   - Datasets:
     - 'datasets/index.md'
     - "Supply Chain": 'datasets/supply_chain.md'
+    - "Movie Recommendation": 'datasets/movie_recommendation.md'
   - Contribute:
     - 'CONTRIBUTING.md'
 

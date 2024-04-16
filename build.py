@@ -129,6 +129,10 @@ for dataset_id in dataset_ids:
                         reader = csv.reader(csvfile)
                         rows = list(reader)[:5]  # Sample up to 5 rows
                         sample_data[table_name] = rows
+                        # escape "|" in the csv file
+                        sample_data[table_name] = [
+                            [cell.replace("|", ",") for cell in row] for row in rows
+                        ]
         else:
             for file in os.listdir(profile_path):
                 if file.endswith(".csv"):
@@ -141,6 +145,10 @@ for dataset_id in dataset_ids:
                         csv_reader = csv.reader(content.splitlines())
                         rows = list(csv_reader)[:5]  # Sample up to 5 rows
                         sample_data[table_name] = rows
+                        # escape "|" in the csv file
+                        sample_data[table_name] = [
+                            [cell.replace("|", ",") for cell in row] for row in rows
+                        ]
     except Exception as e:
         print(f"Error sampling data for dataset {dataset_id}: {e}")
     dataset_map[dataset_id][DATASET_SAMPLE_DATA] = sample_data
@@ -308,8 +316,7 @@ dataset_index_template_j2 = """
 
 | Dataset Name | Tags | Description |
 | ------------ | ---- | ----------- | {% for dataset_id in dataset_ids %}
-| [{{ dataset_map[dataset_id].get("name", "N/A") }}](./{{ dataset_id }}) | {% for tag in dataset_map[dataset_id].get("tags", ["N/A"]) %}`{{ tag }}`{% if not loop.last %}, {% endif %}{% endfor %} | {{ dataset_map[dataset_id].get("description", "N/A").replace("\n", "<br>") }} |
-{% endfor %}
+| [{{ dataset_map[dataset_id].get("name", "N/A") }}](./{{ dataset_id }}) | {% for tag in dataset_map[dataset_id].get("tags", ["N/A"]) %}`{{ tag }}`{% if not loop.last %}, {% endif %}{% endfor %} | {{ dataset_map[dataset_id].get("description", "N/A").replace("\n", "<br>") }} | {% endfor %}
 """
 
 ## TODOS

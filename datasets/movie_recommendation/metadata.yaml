@@ -1,0 +1,77 @@
+---
+profiles:
+  - small
+name: Movie Recommendation
+description: |
+  Dataset for Movie Recommendation from MovieLens && OMDB, see this [blog post](https://www.siwei.io/en/nebulagraph-etl-dbt/) for dataset preparation and ETL process, this [blog post](https://www.siwei.io/recommendation-system-with-graphdb/) for recommendation system with graph database.
+homepage: https://github.com/wey-gu/movie-recommendation-dataset
+video: ""
+iframe: ""
+screen_capture: "https://user-images.githubusercontent.com/1651790/201310261-85c40a50-5baa-494c-8970-3187a870d1d9.png"
+gephi_lite_file: ""
+structure_mermaid: |
+  graph TD
+    person[person]
+    movie[movie]
+    genre[genre]
+    user[user]
+
+    movie -->|acted_by| person
+    movie -->|directed_by| person
+    movie -->|with_genre| genre
+    user -->|watched| movie
+
+    style person fill:#f9d,stroke:#333,stroke-width:2px;
+    style movie fill:#fcc,stroke:#333,stroke-width:2px;
+    style genre fill:#cfc,stroke:#333,stroke-width:2px;
+    style user fill:#ccf,stroke:#333,stroke-width:2px;
+properties_mermaid: |
+  classDiagram
+    class person {
+        string name
+        string birthdate
+    }
+    class movie {
+        string name
+    }
+    class genre {
+        string name
+    }
+    class user {
+        string user_id
+    }
+
+    movie --> person : acted_by
+    movie --> person : directed_by
+    movie --> genre : with_genre
+    user --> movie : watched
+
+    style person fill:#f9d,stroke:#333,stroke-width:2px;
+    style movie fill:#fcc,stroke:#333,stroke-width:2px;
+    style genre fill:#cfc,stroke:#333,stroke-width:2px;
+    style user fill:#ccf,stroke:#333,stroke-width:2px;
+
+license: Apache-2.0
+tags:
+  - movie
+  - recommendation system
+author:
+  name: Wey Gu
+  email: weyl.gu@gmail.com
+contributor:
+  name: Wey Gu
+  email: weyl.gu@gmail.com
+jupyter_nebulagraph_load_lines: |
+  %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/people.csv --tag person --vid 0 --props 1:name,2:birthdate --space movie_recommendation
+  %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/movies.csv --tag movie --vid 0 --props 1:name --space movie_recommendation
+  %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/geners.csv --tag genre --vid 0 --props 1:name --space movie_recommendation
+  %ng_load --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/user_watched_movies.csv --tag user --vid 0 --space movie_recommendation
+
+  %ng_load --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/user_watched_movies.csv --edge watched --src 0 --dst 3 --props 1:rating --space movie_recommendation
+  %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/with_genre.csv --edge with_genre --src 0 --dst 1 --space movie_recommendation
+  %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/directed_by.csv --edge directed_by --src 0 --dst 1 --space movie_recommendation
+  %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/movie_recommendation/small/acted_by.csv --edge acted_by --src 0 --dst 1 --space movie_recommendation
+nebula_importer:
+  version: v3
+  conf_file: https://github.com/wey-gu/movie-recommendation-dataset/blob/main/nebula-importer.yaml
+  conf_file_name: nebula-importer.yaml
