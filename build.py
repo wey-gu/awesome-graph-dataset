@@ -10,6 +10,7 @@ import os
 import yaml
 
 from jinja2 import Template
+import requests
 
 # Parse dataset instances from the ./datasets directory
 
@@ -114,13 +115,26 @@ for dataset_id in dataset_ids:
     sample_data = {}
     try:
         profile_path = f"./datasets/{dataset_id}/{profile}"
-        for file in os.listdir(profile_path):
-            if file.endswith(".csv"):
-                table_name = file[:-4]  # Remove .csv extension
-                with open(os.path.join(profile_path, file), "r") as csvfile:
-                    reader = csv.reader(csvfile)
-                    rows = list(reader)[:5]  # Sample up to 5 rows
-                    sample_data[table_name] = rows
+        if os.environ.get("WITH_GITLFS") == "true":
+            for file in os.listdir(profile_path):
+                if file.endswith(".csv"):
+                    table_name = file[:-4]  # Remove .csv extension
+                    with open(os.path.join(profile_path, file), "r") as csvfile:
+                        reader = csv.reader(csvfile)
+                        rows = list(reader)[:5]  # Sample up to 5 rows
+                        sample_data[table_name] = rows
+        else:
+            for file in os.listdir(profile_path):
+                if file.endswith(".csv"):
+                    table_name = file[:-4]  # Remove .csv extension
+                    response = requests.get(
+                        f"https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/{dataset_id}/{profile}/{file}"
+                    )
+                    if response.status_code == 200:
+                        content = response.content.decode("utf-8")
+                        csv_reader = csv.reader(content.splitlines())
+                        rows = list(csv_reader)[:5]  # Sample up to 5 rows
+                        sample_data[table_name] = rows
     except Exception as e:
         print(f"Error sampling data for dataset {dataset_id}: {e}")
     dataset_map[dataset_id][DATASET_SAMPLE_DATA] = sample_data
