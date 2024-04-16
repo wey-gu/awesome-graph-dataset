@@ -304,9 +304,9 @@ dataset_showcase_template_j2 = """
     # run the importer
     docker run --rm -ti \\
         -v ${PWD}/data/{{ dataset_id }}/{{ profile }}:/data \\
-        -v ${PWD}/{{ dataset["nebula_importer"].get("conf_file_name", "importer_v4_config.yaml") }}:/root/importer_v4_config.yaml \\
+        -v ${PWD}/{{ dataset["nebula_importer"].get("conf_file_name", "importer_v4_config.yaml") }}:/root/importer_{{ dataset["nebula_importer"].get("version", "v4") }}_config.yaml \\
         vesoft/nebula-importer:{{ dataset["nebula_importer"].get("version", "v4") }} \\
-        -c /root/importer_v4_config.yaml
+        -c /root/importer_{{ dataset["nebula_importer"].get("version", "v4") }}_config.yaml
     ```
 {% endif %}
 """
