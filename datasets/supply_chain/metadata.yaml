@@ -71,4 +71,15 @@ tags:
 author:
   name: Wey Gu
   email: weyl.gu@gmail.com
-
+jupyter_nebulagraph_load_lines: |
+  %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/supply_chain/tiny/nodes_car_model.csv --tag car_model --vid 0 --props 1:name,2:number,3:year,4:type,5:engine_type,6:size,7:seats --space supply_chain
+  %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/supply_chain/tiny/nodes_feature.csv --tag feature --vid 0 --props 1:name,2:number,3:type,4:state --space supply_chain
+  %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/supply_chain/tiny/nodes_part.csv --tag part --vid 0 --props 1:name,2:number,3:price,4:date --space supply_chain
+  %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/supply_chain/tiny/nodes_supplier.csv --tag supplier --vid 0 --props 1:name,2:address,3:contact,4:phone_number --space supply_chain
+  %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/supply_chain/tiny/with_feature.csv --edge with_feature --src 0 --dst 1 --props 2:version --space supply_chain
+  %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/supply_chain/tiny/is_composed_of.csv --edge is_composed_of --src 0 --dst 1 --props 2:version --space supply_chain
+  %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/supply_chain/tiny/is_supplied_by.csv --edge is_supplied_by --src 0 --dst 1 --props 2:version --space supply_chain
+nebula_importer:
+  version: v4
+  conf_file: https://github.com/wey-gu/supplychain-dataset-gen/blob/main/importer_v4_config.yaml
+  conf_file_name: importer_v4_config.yaml
