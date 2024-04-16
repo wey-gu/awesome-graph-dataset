@@ -33,6 +33,8 @@ graph TD
 
 - Create a folder in the `datasets` directory with the id of the dataset.
 - Add a `metadata.yaml` file in the dataset folder.
+  - For demo video, consider using NebulaGraph Explorer, Gephi, or other visualization tools(like the `%ng_draw` in Jupyter-NebulaGraph).
+  - For iframe(html version of Graph Visualization), consider using [NebulaGraph-Gephi](https://github.com/wey-gu/NebulaGraph-Gephi) to Query and Render a HTML file.
 - Add a `schema.ddl.ngql` file in the dataset folder.
 - Add `nav` in the `mkdocs.yml` file, in alphabetical order.
 - Add dataset CSV files in the dataset folder, with git LFS enabled, at least the tiny profile.
