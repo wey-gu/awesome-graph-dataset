@@ -57,12 +57,18 @@ properties_mermaid: |
     car_model --> feature : with_feature
     feature --> part : is_composed_of
     part --> supplier : is_supplied_by
+
+    style car_model fill:#f9d,stroke:#333,stroke-width:2px;
+    style feature fill:#fcc,stroke:#333,stroke-width:2px;
+    style part fill:#cfc,stroke:#333,stroke-width:2px;
+    style supplier fill:#ccf,stroke:#333,stroke-width:2px;
+
 license: Apache-2.0
 tags:
   - supply chain
   - automotive
   - manufacturing
-authors:
-  - name: Wey Gu
-    email: weyl.gu@gmail.com
+author:
+  name: Wey Gu
+  email: weyl.gu@gmail.com
 

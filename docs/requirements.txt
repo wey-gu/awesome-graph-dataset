@@ -1,0 +1,6 @@
+mkdocs
+mkdocs-jupyter
+mkdocs-redirects==1.2.1
+mkdocs-material[imaging]
+mkdocs-mermaid2-plugin
+jinja2

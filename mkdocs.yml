@@ -1,0 +1,86 @@
+site_name: Graph Dataset Hub
+
+plugins:
+  # - mkdocs-jupyter:
+  #     execute: false
+  #     include_source: true
+  - search
+  - social
+  - mermaid2
+
+
+nav:
+  - Home:
+    - 'index.md'
+  - Datasets:
+    - "Supply Chain": 'datasets/supply_chain.md'
+
+repo_url: https://github.com/wey-gu/awesome-graph-dataset
+repo_name: awesome-graph-dataset
+
+theme:
+  favicon: images/favicon.png
+  name: material
+  # custom_dir: docs/overrides
+  palette:
+    primary: white
+    accent: white
+    scheme: slate
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  logo: 'images/favicon.png'
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+    - content.tooltips
+  palette:
+    - media: (prefers-color-scheme)
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - accent: purple
+      media: "(prefers-color-scheme: light)"
+      primary: white
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - accent: purple
+      media: "(prefers-color-scheme: dark)"
+      primary: black
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/wey-gu/awesome-graph-dataset
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/NebulaGraph
+
+markdown_extensions:
+  - pymdownx.superfences:
+        # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
+
+copyright: Copyright &copy; 2021-2024, NebulaGraph Community
