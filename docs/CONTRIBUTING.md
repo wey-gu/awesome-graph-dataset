@@ -4,7 +4,6 @@
 
 To contribute a new dataset to the Graph Dataset Hub, please follow these steps:
 
-
 ```mermaid
 graph TD
   subgraph Github ISSUE
@@ -38,3 +37,24 @@ graph TD
 - Add a `schema.ddl.ngql` file in the dataset folder.
 - Add `nav` in the `mkdocs.yml` file, in alphabetical order.
 - Add dataset CSV files in the dataset folder, with git LFS enabled, at least the tiny profile.
+
+
+### Build Graph Hub Site locally
+
+Install git-lfs.
+
+```bash
+sudo apt-get install git-lfs
+git lfs install
+```
+
+Install the required packages and build the site.
+
+```bash
+# Install the required packages
+pip3 install -r docs/requirements.txt
+# Build the site
+export WITH_GITLFS=true ;python3 build.py
+# Serve the site
+mkdocs serve -a 0.0.0.0:8088
+```

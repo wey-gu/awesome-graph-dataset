@@ -3,3 +3,7 @@ docs/datasets/*
 # mkdocs
 
 .cache/
+
+# jupyter
+
+.ipynb_checkpoints/

@@ -37,6 +37,8 @@ DATASET_VIDEO = "video"
 DATASET_HTML_IFRAME = "iframe"
 DATASET_SCREEN_CAPTURE = "screen_capture"
 DATASET_GEPHI_LITE_FILE = "gephi_lite_file"
+DATASET_JUPYTER_LOAD_LINES = "jupyter_nebulagraph_load_lines"
+DATASET_NEBULA_IMPORTER_CONF = "nebula_importer"
 
 # Schmea Related Keys:
 DATASET_STRUCTURE_MERMAID = "structure_mermaid"
@@ -102,6 +104,8 @@ for dataset_id in dataset_ids:
         DATASET_TAGS: metadata.get(DATASET_TAGS),
         DATASET_AUTHOR: metadata.get(DATASET_AUTHOR),
         DATASET_HOMEPAGE: metadata.get(DATASET_HOMEPAGE),
+        DATASET_JUPYTER_LOAD_LINES: metadata.get(DATASET_JUPYTER_LOAD_LINES),
+        DATASET_NEBULA_IMPORTER_CONF: metadata.get(DATASET_NEBULA_IMPORTER_CONF),
     }
 
 # Sample CSV files from first profile of each dataset instance
@@ -223,9 +227,75 @@ dataset_showcase_template_j2 = """
 
 ## Download
 
-- [Files](https://github.com/wey-gu/awesome-graph-dataset/tree/main/datasets/{{ dataset_id }})
+=== "Files"
+    
+    [Browse Files](https://github.com/wey-gu/awesome-graph-dataset/tree/main/datasets/{{ dataset_id }}){ .md-button }
 
+{% if dataset["gephi_lite_file"] %}
+=== "Gephi Lite File"
+    
+    [Download Gephi Lite File](https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/{{ dataset_id }}/{{ dataset["gephi_lite_file"] }}){ .md-button }
 
+{% endif %}
+
+{% if dataset["jupyter_nebulagraph_load_lines"] %}
+=== "Jupyter-NebulaGraph"
+
+    Install the Jupyter-NebulaGraph extension.
+
+    ```python
+    !pip install jupyter-nebulagraph
+    %load_ext jupyter_nebulagraph
+    %ngql --address 127.0.0.1 --port 9669 --user root --password nebula
+    ```
+    
+    Create Graph Space and Schema.
+    
+    ```python
+    %ngql CREATE SPACE {{ dataset_id }}(partition_num=1, replica_factor=1, vid_type=fixed_string(128));
+    # wait for a while
+    %ngql USE {{ dataset_id }};
+    ```
+    
+    ```sql
+    # DDL with `%%ngql` magic for multi-line execution
+    %%ngql
+    {{ dataset["ddl"] | indent(4) }}
+    ```
+    
+    > Refer to [jupyter-nebulagraph](https://jupyter-nebulagraph.readthedocs.io) for more information.
+    
+    ```python
+    {{ dataset["jupyter_nebulagraph_load_lines"] | indent(4) }}
+    ```
+    
+    {% endif %}
+
+{% if dataset["nebula_importer"] %}
+=== "Nebula Importer"
+
+    The [Nebula Importer](https://github.com/vesoft-inc/nebula-importer) is a tool for importing data from various data sources into NebulaGraph.
+
+    We provide a [configuration file]({{ dataset["nebula_importer"].get("conf_file", "#") }}) for the Nebula Importer(version: {{ dataset["nebula_importer"].get("version", "v4") }}) to import the dataset.
+
+    Reference call command, assuming the configuration file is named `{{ dataset["nebula_importer"].get("conf_file_name", "importer_v4_config.yaml") }}` in your current directory:
+
+    ```shell
+    # get the configuration file
+    # modify the configuration file according to your environment
+
+    # ls -l ./data/{{ dataset_id }}/{{ profile }}
+    
+    # ls -l {{ dataset["nebula_importer"].get("conf_file_name", "importer_v4_config.yaml") }}
+    
+    # run the importer
+    docker run --rm -ti \\
+        -v ${PWD}/data/{{ dataset_id }}/{{ profile }}:/data \\
+        -v ${PWD}/{{ dataset["nebula_importer"].get("conf_file_name", "importer_v4_config.yaml") }}:/root/importer_v4_config.yaml \\
+        vesoft/nebula-importer:{{ dataset["nebula_importer"].get("version", "v4") }} \\
+        -c /root/importer_v4_config.yaml
+    ```
+{% endif %}
 """
 
 dataset_index_template_j2 = """
