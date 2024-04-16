@@ -11,8 +11,8 @@ build:
   tools:
     python: "3.11"
   pre-build:
-    - pip3 install -r docs/requirements.txt
-    - python3 build.py
+    - python -m pip install -r docs/requirements.txt
+    - python build.py
 
 mkdocs:
   configuration: mkdocs.yml
