@@ -6,4 +6,4 @@ Explore our datasets, learn how to load them into NebulaGraph, and start buildin
 
 To contribute to the Graph Dataset Hub or to explore more about the datasets, visit our [GitHub repository](https://github.com/wey-gu/awesome-graph-dataset). We welcome contributions from the community!
 
-To access our datasets, please visit the [datasets directory](/datasets) where you'll find a wide range of graph datasets ready for use. Each dataset is meticulously prepared to ensure compatibility with NebulaGraph, providing you with a seamless experience as you embark on your graph database journey.
+To access our datasets, please visit the [datasets directory](/datasets/) where you'll find a wide range of graph datasets ready for use. Each dataset is meticulously prepared to ensure compatibility with NebulaGraph, providing you with a seamless experience as you embark on your graph database journey.
