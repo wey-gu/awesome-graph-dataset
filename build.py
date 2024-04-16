@@ -250,7 +250,7 @@ dataset_showcase_template_j2 = """
 
     ```python
     !pip install jupyter-nebulagraph
-    %load_ext jupyter_nebulagraph
+    %load_ext ngql
     %ngql --address 127.0.0.1 --port 9669 --user root --password nebula
     ```
     
