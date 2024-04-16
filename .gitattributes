@@ -1,2 +1,4 @@
 *.csv filter=lfs diff=lfs merge=lfs -text
 *.data.ngql filter=lfs diff=lfs merge=lfs -text
+nebulagraph.html filter=lfs diff=lfs merge=lfs -text
+nebulagraph_schema.html filter=lfs diff=lfs merge=lfs -text
