@@ -11,7 +11,9 @@ plugins:
 
 nav:
   - Home:
-    - 'index.md'
+    - 'Welcome': 'index.md'
+    - 'Dataset Index': 'datasets/index.md'
+    - 'Contribute': 'CONTRIBUTING.md'
   - Datasets:
     - 'datasets/index.md'
     - "Supply Chain": 'datasets/supply_chain.md'
