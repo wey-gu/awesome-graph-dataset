@@ -61,6 +61,12 @@ mkdocs serve -a 0.0.0.0:8088
 
 ### Example of introducing a new dataset
 
+> Assuming that you have already created a proposal issue and it has been discussed by the community.
+
+Reference PR: [#10](https://github.com/wey-gu/awesome-graph-dataset/pull/10)
+
+First, create a new folder in the `datasets` directory with the id of the dataset.
+
 ```bash
 $ git add .
 # datafiles, metadata, schema, and mkdocs.yml were modified
@@ -125,3 +131,5 @@ $ mkdocs serve -a 0.0.0.0:8088
 ```
 
 And visit the site at `http://localhost:8088` and verify the new dataset's page.
+
+Then we could push the changes to the repository and create a PR!
