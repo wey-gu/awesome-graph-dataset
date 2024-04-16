@@ -54,4 +54,4 @@ See more per each dataset in [Graph Dataset Hub](https://graph-hub.siwei.io/).
 
 ## Contributing
 
-Please refer to the [Contribution Guide](https://graph-hub.siwei.io/en/latest/CONTRIBUTING.md) for more information on how to introduce new datasets to the Graph Dataset Hub.
+Please refer to the [Contribution Guide](https://graph-hub.siwei.io/en/latest/CONTRIBUTING/) for more information on how to introduce new datasets to the Graph Dataset Hub.
