@@ -254,7 +254,7 @@ dataset_showcase_template_j2 = """
 {% if dataset["jupyter_nebulagraph_load_lines"] %}
 === "Jupyter-NebulaGraph"
 
-    Install the Jupyter-NebulaGraph extension.
+    Install the Jupyter-NebulaGraph extension, refer to the [documentation](https://jupyter-nebulagraph.readthedocs.io/) for more information.
 
     ```python
     !pip install jupyter-nebulagraph
@@ -314,9 +314,9 @@ dataset_showcase_template_j2 = """
 dataset_index_template_j2 = """
 # Datasets
 
-| Dataset Name | Tags | Description |
-| ------------ | ---- | ----------- | {% for dataset_id in dataset_ids %}
-| [{{ dataset_map[dataset_id].get("name", "N/A") }}](./{{ dataset_id }}) | {% for tag in dataset_map[dataset_id].get("tags", ["N/A"]) %}`{{ tag }}`{% if not loop.last %}, {% endif %}{% endfor %} | {{ dataset_map[dataset_id].get("description", "N/A").replace("\n", "<br>") }} | {% endfor %}
+| Dataset Name | Tags | Sizes | Description |
+| ------------ | ---- | ----- | ----------- | {% for dataset_id in dataset_ids %}
+| [{{ dataset_map[dataset_id].get("name", "N/A") }}](./{{ dataset_id }}) | {% for tag in dataset_map[dataset_id].get("tags", ["N/A"]) %}`{{ tag }}`{% if not loop.last %}, {% endif %}{% endfor %} | {% for size in dataset_map[dataset_id].get("profiles", ["N/A"]) %}`{{ size }}`{% if not loop.last %}, {% endif %}{% endfor %} | {{ dataset_map[dataset_id].get("description", "N/A").replace("\n", "<br>") }} | {% endfor %}
 """
 
 ## TODOS
