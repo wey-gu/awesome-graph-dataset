@@ -1,5 +1,5 @@
 <picture>
-  <img style="width: 60%;" alt="Graph Hub Banner" src="https://github.com/wey-gu/awesome-graph-dataset/assets/1651790/2f7f5c79-ff36-4fb7-9a41-bd36932f7a32">
+  <img style="width: 60%; margin-left: auto; margin-right: auto; display: block;" alt="Graph Hub Banner" src="https://github.com/wey-gu/awesome-graph-dataset/assets/1651790/2f7f5c79-ff36-4fb7-9a41-bd36932f7a32">
 </picture>
 
 <p align="center">
