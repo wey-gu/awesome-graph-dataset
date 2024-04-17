@@ -1,8 +1,17 @@
-<a href="https://graph-hub.siwei.io"><img src="https://github.com/wey-gu/awesome-graph-dataset/assets/1651790/2f7f5c79-ff36-4fb7-9a41-bd36932f7a32" alt="Awesome Graph Dataset Banner" width="20%"></a>
+
+<picture>
+  <img style="width: 60%;" alt="Graph Hub Banner" src="https://github.com/wey-gu/awesome-graph-dataset/assets/1651790/2f7f5c79-ff36-4fb7-9a41-bd36932f7a32">
+</picture>
+
+<p align="center">
+    <em>Graph Data in One Click</em>
+</p>
 
 ## Awesome Graph Dataset
 
-[Graph Hub](https://graph-hub.siwei.io) is a community and site, to gether selected collection of graph datasets tailored for NebulaGraph.
+[Graph Hub](https://graph-hub.siwei.io) is an Open Source community and hub, providing a carefully selected assortment of graph datasets tailored for [NebulaGraph](https://github.com/vesoft-inc/nebula).
+
+You could explore Graph Query, Algorithm, Visualization, GNN, GenAI(Graph RAG) and more by copy & paste the ingestion commands from the dataset page.
 
 ## How to use
 
@@ -21,6 +30,12 @@ Option 0(Not yet supported):
 ```
 
 Option 1:
+
+Load with `%ng_load` magic command to load data from registry of Graph Dataset Hub.
+
+- See [supply_chain dataset download](https://graph-hub.siwei.io/en/latest/datasets/supply_chain/#__tabbed_4_2) for more details.
+- See [%ng_load magic command](https://jupyter-nebulagraph.readthedocs.io/en/latest/magic_words/ng_load/) for command usage.
+
 ```python
 %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/supply_chain/tiny/nodes_car_model.csv --tag car_model --vid 0 --props 1:name,2:number,3:year,4:type,5:engine_type,6:size,7:seats --space supply_chain
 %ng_load --header --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/supply_chain/tiny/nodes_feature.csv --tag feature --vid 0 --props 1:name,2:number,3:type,4:state --space supply_chain
