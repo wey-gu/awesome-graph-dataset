@@ -1,0 +1,12 @@
+CREATE TAG corp (corp_name string, phone_num string, is_risky string, risk_comment string);
+CREATE TAG application (apply_agent_id string, apply_date date, application_uuid string, approval_status string, application_type string, rejection_reason string);
+CREATE TAG phone_num (phone_num string);
+CREATE TAG device (device_id string);
+CREATE TAG person (name string);
+CREATE TAG applicant (name string, gender string, birth date, addr string, degree string, occupation string, year_salary string, is_risky string, risk_comment string);
+
+CREATE EDGE applied_for_loan (start_time date); 
+CREATE EDGE with_phone_num (start_time date);
+CREATE EDGE is_related_to (start_time date, level int);
+CREATE EDGE worked_for (start_time date);
+CREATE EDGE used_device (start_time date);
