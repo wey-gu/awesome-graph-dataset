@@ -246,8 +246,16 @@ dataset_showcase_template_j2 = """
 
 {% if dataset["gephi_lite_file"] %}
 === "Gephi Lite File"
+    [Download Gephi Lite File]({{ dataset["gephi_lite_file"] }}){ .md-button }
+
+    > Gephi Lite is an OSS tool for Graph Visualization and In Canvas Graph Exploration and Computational Analysis.
     
-    [Download Gephi Lite File](https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/{{ dataset_id }}/{{ dataset["gephi_lite_file"] }}){ .md-button }
+    Download this sample Gephi Lite file to visualize the sampled graph data from [here](https://gephi.org/gephi-lite).
+
+    <iframe src="https://gephi.org/gephi-lite" width="100%" height="600" style="zoom:1.5;"></iframe>
+    
+    💡: You can generate gephi file from any graph query with [NebulaGraph-Gephi](https://github.com/wey-gu/NebulaGraph-Gephi).
+
 
 {% endif %}
 

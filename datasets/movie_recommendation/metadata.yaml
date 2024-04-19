@@ -6,9 +6,9 @@ description: |
   Dataset for Movie Recommendation from MovieLens && OMDB, see this [blog post](https://www.siwei.io/en/nebulagraph-etl-dbt/) for dataset preparation and ETL process, this [blog post](https://www.siwei.io/recommendation-system-with-graphdb/) for recommendation system with graph database.
 homepage: https://github.com/wey-gu/movie-recommendation-dataset
 video: ""
-iframe: ""
+iframe: https://www.siwei.io/demo-dumps/adhoc-graphs/nebulagraph_export_movie_recommendation.html
 screen_capture: "https://user-images.githubusercontent.com/1651790/201310261-85c40a50-5baa-494c-8970-3187a870d1d9.png"
-gephi_lite_file: ""
+gephi_lite_file: https://siwei.io/demo-dumps/adhoc-graphs/nebulagraph_export_movie_recommendation.gexf
 structure_mermaid: |
   graph TD
     person[person]
