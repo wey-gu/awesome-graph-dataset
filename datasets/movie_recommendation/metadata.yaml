@@ -8,7 +8,7 @@ homepage: https://github.com/wey-gu/movie-recommendation-dataset
 video: ""
 iframe: https://www.siwei.io/demo-dumps/adhoc-graphs/nebulagraph_export_movie_recommendation.html
 screen_capture: "https://user-images.githubusercontent.com/1651790/201310261-85c40a50-5baa-494c-8970-3187a870d1d9.png"
-gephi_lite_file: https://www.siwei.io/demo-dumps/adhoc-graphs/nebulagraph_export_movie_recommendation.gexf
+gephi_lite_file: https://siwei.io/demo-dumps/adhoc-graphs/nebulagraph_export_movie_recommendation.gexf
 structure_mermaid: |
   graph TD
     person[person]
