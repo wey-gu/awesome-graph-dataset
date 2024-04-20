@@ -7,8 +7,8 @@ description: |
   The dataset was introduced for open source project: [corp-rel-search](https://github.com/wey-gu/nebula-corp-rel-search), a company information search engine with Shareholding Graph.
 
 homepage: https://github.com/wey-gu/nebula-shareholding-example
-video: ""
-iframe: https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/shareholding/nebulagraph_export_shareholding.html
+video: https://github.com/wey-gu/nebula-shareholding-example/assets/1651790/c69df81b-994e-4081-8026-e49744663dd7
+iframe: https://www.siwei.io/demo-dumps/adhoc-graphs/nebulagraph_export_shareholding.html
 screen_capture: https://raw.githubusercontent.com/wey-gu/nebula-shareholding-example/main/images/modeling.png
 gephi_lite_file: https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/shareholding/nebulagraph_export_shareholding.gexf
 structure_mermaid: |
@@ -34,10 +34,10 @@ properties_mermaid: |
         string name
     }
 
-    person --> corp : as_role(role: string)
-    person --> person : relateive_with(degree: int)
+    person --> corp : as_role(role string)
+    person --> person : relateive_with(degree int)
     corp --> corp : is_branch_of()
-    person --> corp : hold_share(share: float)
+    person --> corp : hold_share(share float)
 
     style person fill:#f9d,stroke:#333,stroke-width:2px;
     style corp fill:#fcc,stroke:#333,stroke-width:2px;

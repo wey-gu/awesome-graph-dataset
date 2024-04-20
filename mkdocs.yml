@@ -19,6 +19,7 @@ nav:
     - "Supply Chain": 'datasets/supply_chain.md'
     - "Movie Recommendation": 'datasets/movie_recommendation.md'
     - "Loan Fraud Detection": 'datasets/fraud_detection.md'
+    - "Shareholding": 'datasets/shareholding.md'
   - Contribute:
     - 'CONTRIBUTING.md'
 

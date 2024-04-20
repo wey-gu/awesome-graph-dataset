@@ -54,9 +54,9 @@ properties_mermaid: |
         string phone_number
     }
 
-    car_model --> feature : with_feature(version:string)
-    feature --> part : is_composed_of(version:string)
-    part --> supplier : is_supplied_by(version:string)
+    car_model --> feature : with_feature(version string)
+    feature --> part : is_composed_of(version string)
+    part --> supplier : is_supplied_by(version string)
 
     style car_model fill:#f9d,stroke:#333,stroke-width:2px;
     style feature fill:#fcc,stroke:#333,stroke-width:2px;
