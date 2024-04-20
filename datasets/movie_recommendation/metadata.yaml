@@ -44,7 +44,7 @@ properties_mermaid: |
     movie --> person : acted_by
     movie --> person : directed_by
     movie --> genre : with_genre
-    user --> movie : watched
+    user --> movie : watched(rate: float)
 
     style person fill:#f9d,stroke:#333,stroke-width:2px;
     style movie fill:#fcc,stroke:#333,stroke-width:2px;
