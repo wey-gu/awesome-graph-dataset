@@ -1,0 +1,7 @@
+CREATE TAG person(name string);
+CREATE TAG corp(name string);
+
+CREATE EDGE role_as(role string);
+CREATE EDGE is_branch_of();
+CREATE EDGE hold_share(share float);
+CREATE EDGE reletive_with(degree int);

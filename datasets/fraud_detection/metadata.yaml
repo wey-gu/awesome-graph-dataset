@@ -68,14 +68,14 @@ properties_mermaid: |
         string risk_comment
     }
 
-    applicant --> application : applied_for_loan
-    application --> phone_num : with_phone_num
-    applicant --> device : used_device
-    device --> person : is_related_to
-    applicant --> corp : worked_for
-    person --> applicant : is_related_to
-    person --> phone_num : with_phone_num
-    corp --> phone_num : with_phone_num
+    applicant --> application : applied_for_loan(start_time: date)
+    application --> phone_num : with_phone_num(start_time: date)
+    applicant --> device : used_device(start_time: date)
+    device --> person : is_related_to(level: int)
+    applicant --> corp : worked_for(start_time: date)
+    person --> applicant : is_related_to(start_time: date)
+    person --> phone_num : with_phone_num(start_time: date)
+    corp --> phone_num : with_phone_num(start_time: date)
 
     style corp fill:#f9d,stroke:#333,stroke-width:3px;
     style applicant fill:#fcc,stroke:#333,stroke-width:3px;

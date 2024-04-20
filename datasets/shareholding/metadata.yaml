@@ -1,0 +1,66 @@
+---
+profiles:
+  - tiny
+name: Shareholding Dataset
+description: |
+  A Generated Shareholding Dataset, which contains the shareholding information of companies and individuals.
+  The dataset was introduced for open source project: [corp-rel-search](https://github.com/wey-gu/nebula-corp-rel-search), a company information search engine with Shareholding Graph.
+
+homepage: https://github.com/wey-gu/nebula-shareholding-example
+video: ""
+iframe: https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/shareholding/nebulagraph_export_shareholding.html
+screen_capture: https://raw.githubusercontent.com/wey-gu/nebula-shareholding-example/main/images/modeling.png
+gephi_lite_file: https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/shareholding/nebulagraph_export_shareholding.gexf
+structure_mermaid: |
+  graph TD
+    A[person]
+    B[corp]
+
+    A -->|hold_share| B
+    A -->|as_role| B
+    A -->|relateive_with| A
+    B -->|hold_share| B
+    B -->|is_branch_of| B
+
+    style A fill:#f9d,stroke:#333,stroke-width:2px;
+    style B fill:#fcc,stroke:#333,stroke-width:2px;
+
+properties_mermaid: |
+  classDiagram
+    class person {
+        string name
+    }
+    class corp {
+        string name
+    }
+
+    person --> corp : as_role(role: string)
+    person --> person : relateive_with(degree: int)
+    corp --> corp : is_branch_of()
+    person --> corp : hold_share(share: float)
+
+    style person fill:#f9d,stroke:#333,stroke-width:2px;
+    style corp fill:#fcc,stroke:#333,stroke-width:2px;
+
+license: Apache-2.0
+tags:
+  - shareholding
+  - company
+author:
+  name: Wey Gu
+  email: weyl.gu@gmail.com
+contributor:
+  name: Wey Gu
+  email: weyl.gu@gmail.com
+jupyter_nebulagraph_load_lines: |
+  %ng_load  --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/shareholding/tiny/person.csv --tag person --vid 0 --props 1:name --space shareholding
+  %ng_load  --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/shareholding/tiny/corp.csv --tag corp --vid 0 --props 1:name --space shareholding
+  %ng_load  --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/shareholding/tiny/person_corp_role.csv --edge role_as --src 0 --dst 1 --props 2:role  --space shareholding
+  %ng_load  --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/shareholding/tiny/corp_rel.csv --edge is_branch_of --src 0 --dst 1   --space shareholding
+  %ng_load  --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/shareholding/tiny/corp_share.csv --edge hold_share --src 0 --dst 1 --props 2:share  --space shareholding
+  %ng_load  --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/shareholding/tiny/person_corp_share.csv --edge hold_share --src 0 --dst 1 --props 2:share  --space shareholding
+  %ng_load  --source https://github.com/wey-gu/awesome-graph-dataset/raw/main/datasets/shareholding/tiny/person_rel.csv --edge reletive_with --src 0 --dst 1 --props 2:degree  --space shareholding
+nebula_importer:
+  version: v3
+  conf_file: https://raw.githubusercontent.com/wey-gu/nebula-shareholding-example/main/nebula-importer.yaml
+  conf_file_name: nebula-importer.yaml
