@@ -4,9 +4,8 @@ from io import StringIO
 from typing import Optional, TYPE_CHECKING, Type
 from pydantic import BaseModel
 
-from nebula3.gclient.net.base import (
-    BaseExecutor,
-)  # Requires nebula3 >= bb218fa126e9996dbc60dec615612ebf6a8a3428
+from nebula3.gclient.net.base import BaseExecutor
+
 
 from tqdm.auto import tqdm
 

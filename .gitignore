@@ -7,3 +7,5 @@ docs/datasets/*
 # jupyter
 
 .ipynb_checkpoints/
+
+.pdm-python
