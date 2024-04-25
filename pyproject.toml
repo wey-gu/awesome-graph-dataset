@@ -1,0 +1,23 @@
+[project]
+name = "nebula_loader"
+version = "0.1.0"
+description = "Load from awesome-dataset into NebulaGraph"
+authors = [
+]
+dependencies = [
+    "requests>=2.31.0",
+    "pandas>=2.0.3",
+    "pydantic>=2.7.1",
+    "tqdm>=4.66.2",
+    "nebula3-python @ git+https://github.com/BeautyyuYanli/nebula-python.git"
+]
+requires-python = ">=3.8"
+readme = "README.md"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
