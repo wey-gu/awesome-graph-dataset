@@ -54,7 +54,7 @@ Install the required packages and build the site.
 # Install the required packages
 pip3 install -r docs/requirements.txt
 # Build the site
-export WITH_GITLFS=true ;python3 build.py
+export WITH_GITLFS=true ;python3 build_site.py
 # Serve the site
 mkdocs serve -a 0.0.0.0:8088
 ```
@@ -126,7 +126,7 @@ Objects not staged for commit:
 Then try to build the site locally and check the new dataset.
 
 ```bash
-$ export WITH_GITLFS=true ;python3 build.py
+$ export WITH_GITLFS=true ;python3 build_site.py
 $ mkdocs serve -a 0.0.0.0:8088
 ```
 
