@@ -9,3 +9,4 @@ docs/datasets/*
 .ipynb_checkpoints/
 
 .pdm-python
+dist/
