@@ -9,7 +9,7 @@ dependencies = [
     "pandas>=2.0.3",
     "pydantic>=2.7.1",
     "tqdm>=4.66.2",
-    "nebula3-python @ git+https://github.com/vesoft-inc/nebula-python.git"
+    "nebula3-python>=3.8"
 ]
 requires-python = ">=3.8"
 readme = "README.md"
