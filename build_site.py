@@ -252,7 +252,7 @@ dataset_showcase_template_j2 = """
     
     Download this sample Gephi Lite file to visualize the sampled graph data from [here](https://gephi.org/gephi-lite).
 
-    <iframe allow="accelerometer; ambient-light-sensor; autoplay; battery; camera; document-domain; encrypted-media; fullscreen; geolocation; gyroscope; layout-animations; legacy-image-formats; magnetometer; microphone; midi; oversized-images; payment; picture-in-picture; publickey-credentials-get; sync-xhr; usb; vr ; wake-lock; xr-spatial-tracking" src="https://gephi.org/gephi-lite/" width="1294" height="800" scrolling="auto" sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-downloads" title="Gephi Lite"></iframe>
+    <iframe allow="accelerometer; ambient-light-sensor; autoplay; battery; camera; document-domain; encrypted-media; fullscreen; geolocation; gyroscope; layout-animations; legacy-image-formats; magnetometer; microphone; midi; oversized-images; payment; picture-in-picture; publickey-credentials-get; sync-xhr; usb; vr ; wake-lock; xr-spatial-tracking" src="https://gephi.org/gephi-lite/?file={{ dataset["gephi_lite_file"] }}" width="1294" height="800" scrolling="auto" sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-downloads" title="Gephi Lite"></iframe>
     
     💡: You can generate gephi file from any graph query with [NebulaGraph-Gephi](https://github.com/wey-gu/NebulaGraph-Gephi).
 
